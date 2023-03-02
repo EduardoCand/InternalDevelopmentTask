@@ -65,7 +65,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Synchronize two folders.')
     parser.add_argument('source_dir', help='path to the source folder')
     parser.add_argument('replica_dir', help='path to the replica folder')
-    parser.add_argument('interval', type=int, help='synchronization interval in seconds')
+    parser.add_argument('time_interval', type=int, help='synchronization interval in seconds')
     parser.add_argument('log_file', help='path to the log file')
     args = parser.parse_args()
 
@@ -73,4 +73,4 @@ if __name__ == '__main__':
     with open(args.log_file, 'a') as log_file:
         while True:
             sync_folders(args.source_dir, args.replica_dir, log_file)
-            time.sleep(args.interval)
+            time.sleep(args.time_interval)
